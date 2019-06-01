@@ -1,0 +1,56 @@
+{
+    "version": 8,
+    "name": "Day Mode",
+    "center": [77.23, 28.61],
+    "zoom": 12,
+    "bearing": 0,
+    "pitch": 0,
+    "light": {"color": "hsl(0, 0%, 90%)"},
+    "sources": {
+        "composite": {
+            "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7",
+            "type": "vector"
+        }
+    },
+    "sprite": "mapbox://sprites/maplamps/cjw6cia6u3o391cnwpk7ru8ym/ck2u8j60r58fu0sgyxrigm3cu",
+    "glyphs": "mapbox://fonts/maplamps/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "layout": {},
+            "paint": {"background-color": "hsl(0, 0%, 100%)"}
+        },
+        {
+            "id": "road-primary-case",
+            "type": "line",
+            "metadata": {"mapbox:group": "0cb8c63458cbe21bbe1ad66543f73a04"},
+            "source": "composite",
+            "source-layer": "road",
+            "filter": [
+                "all",
+                ["!in", "structure", "bridge", "tunnel"],
+                ["==", "class", "primary"]
+            ],
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round",
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-width": {"base": 1.5, "stops": [[5, 0.75], [16, 2]]},
+                "line-opacity": {
+                    "base": 1,
+                    "stops": [[6, 0], [7, 0.4], [9, 0.5], [10, 1]]
+                },
+                "line-gap-width": {"base": 1.5, "stops": [[5, 0.75], [18, 32]]}
+            }
+        }
+    ],
+    "created": "2019-05-27T12:25:58.481Z",
+    "id": "cjw6cia6u3o391cnwpk7ru8ym",
+    "modified": "2019-05-27T12:36:09.318Z",
+    "owner": "maplamps",
+    "visibility": "private",
+    "draft": false
+}
